@@ -32,14 +32,14 @@ namespace TechJobsOO
         public override bool Equals(object obj)
         {
             return obj is Job job &&
-                   Id == job.Id;
+            Id == job.Id;
         }
 
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
         }
-
+         
 
         public override string ToString()
         {
@@ -50,11 +50,11 @@ namespace TechJobsOO
 
                 
                 return $"\nID: {Id}\n" +
-                (Name == null ? "Name: Data not available\n" : $"Name: {Name}\n") +
-                (EmployerName == null ? "Employer: Data not available\n" : $"Employer: {EmployerName}\n") +
-                (EmployerLocation == null ? "Location: Data not available\n" : $"Location: {EmployerLocation}\n") +
-                (JobType == null ? "Position Type: Data not available\n" : $"Position Type: {JobType}\n")+
-                (JobCoreCompetency == null ? "Core Competency: Data not available\n" : $"Core Competency: {JobCoreCompetency}\n");
+                (Name == "" ? "Name: Data not available\n" : $"Name: {Name}\n") +
+                (EmployerName.Value == "" ? "Employer: Data not available\n" : $"Employer: {EmployerName}\n") +
+                (EmployerLocation.Value == "" ? "Location: Data not available\n" : $"Location: {EmployerLocation}\n") +
+                (JobType.Value == "" ? "Position Type: Data not available\n" : $"Position Type: {JobType}\n")+
+                (JobCoreCompetency.Value == "" ? "Core Competency: Data not available\n" : $"Core Competency: {JobCoreCompetency}\n");
         }
        
     }

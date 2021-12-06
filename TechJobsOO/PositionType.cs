@@ -8,7 +8,7 @@ namespace TechJobsOO
         { }
 
 
-        public PositionType(string value) : base()
+        public PositionType(string value) : base(value)
         { }        
     }
 }

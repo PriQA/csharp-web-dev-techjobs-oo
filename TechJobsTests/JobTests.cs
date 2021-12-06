@@ -78,7 +78,7 @@ namespace TechJobsTests
         public void Test_5ToStringWhenDataNotAvailable()
         {
 
-            Job jobWithNoPositionType = new Job("Sr. Software Developer", new Employer("Bayer"), new Location("Dallas"), null, new CoreCompetency("C#"));
+            Job jobWithNoPositionType = new Job("Sr. Software Developer", new Employer("Bayer"), new Location("Dallas"), new PositionType(""), new CoreCompetency("C#"));
             string expectedOutput = $"\nID: {jobWithNoPositionType.Id}\n" +
                 $"Name: {jobWithNoPositionType.Name}\n" +
                 $"Employer: {jobWithNoPositionType.EmployerName}\n" +
@@ -92,7 +92,7 @@ namespace TechJobsTests
         public void Test_6ToStringWhenDataNotAvailable()
         {
 
-            Job jobWithNoLocation = new Job("Sr. Software Developer", new Employer("Bayer"), null, new PositionType("Web Developer"), new CoreCompetency("C#"));
+            Job jobWithNoLocation = new Job("Sr. Software Developer", new Employer("Bayer"), new Location(""), new PositionType("Web Developer"), new CoreCompetency("C#"));
             string expectedOutput = $"\nID: {jobWithNoLocation.Id}\n" +
                 $"Name: {jobWithNoLocation.Name}\n" +
                 $"Employer: {jobWithNoLocation.EmployerName}\n" +
