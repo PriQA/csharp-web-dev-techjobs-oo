@@ -28,7 +28,7 @@ namespace TechJobsOO
             JobType = jobType;
             JobCoreCompetency = jobCoreCompetency;
         }
-
+        // TODO: Generate Equals() and GetHashCode() methods.
         public override bool Equals(object obj)
         {
             return obj is Job job &&
@@ -40,6 +40,22 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        // TODO: Generate Equals() and GetHashCode() methods.
+
+        public override string ToString()
+        {
+            if(Name == null && EmployerName == null && EmployerLocation == null && JobType == null && JobCoreCompetency == null)
+            {
+                return "OOPS! This job does not seem to exist.";
+            }
+
+                
+                return $"\nID: {Id}\n" +
+                (Name == null ? "Name: Data not available\n" : $"Name: {Name}\n") +
+                (EmployerName == null ? "Employer: Data not available\n" : $"Employer: {EmployerName}\n") +
+                (EmployerLocation == null ? "Location: Data not available\n" : $"Location: {EmployerLocation}\n") +
+                (JobType == null ? "Position Type: Data not available\n" : $"Position Type: {JobType}\n")+
+                (JobCoreCompetency == null ? "Core Competency: Data not available\n" : $"Core Competency: {JobCoreCompetency}\n");
+        }
+       
     }
 }

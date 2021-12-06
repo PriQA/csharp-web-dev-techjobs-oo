@@ -1,27 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
 namespace TechJobsOO
 {
-    public class Employer
+    public abstract class JobField
     {
         public int Id { get; }
         private static int nextIdE = 1;
         public string Value { get; set; }
 
-        public Employer()
+        public JobField()
         {
             Id = nextIdE;
             nextIdE++;
         }
 
-        public Employer(string value) : this()
+        public JobField(string value) : this()
         {
             Value = value;
         }
 
         public override bool Equals(object obj)
         {
-            return obj is Employer employer &&
-                   Id == employer.Id;
+            return obj is JobField jobfield &&
+            Id == jobfield.Id;
         }
 
         public override int GetHashCode()
@@ -35,3 +38,5 @@ namespace TechJobsOO
         }
     }
 }
+    
+
